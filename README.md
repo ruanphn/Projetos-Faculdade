@@ -69,7 +69,7 @@ $$\text{Nota Final AV2} = \text{Trabalho 1 (4,0 escr. + 1,0 oral)} + \text{Traba
 
 4. **Aprendizado Supervisionado (Etapa 4 - Naive Bayes Gaussiano):**
    * Acurácia Treino: **96,24%** | Acurácia Teste: **88,89%**.
-   * Não há indício de sobreajuste crítico. Apesar da correlação de 0,546 entre `alcohol` e `proline` violar a hipótese estrita de independência condicional, o modelo classifica com alta eficácia porque as fronteiras de decisão dependem prioritariamente da ordenação relativa das probabilidades.
+   * Não há indício de sobreajuste crítico. Apesar da correlação de 0,644 entre `alcohol` e `proline` violar a hipótese estrita de independência condicional, o modelo classifica com alta eficácia porque as fronteiras de decisão dependem prioritariamente da ordenação relativa das probabilidades.
 
 5. **Aprendizado Não Supervisionado e PCA (Etapa 5):**
    * Pureza **sem normalização**: **70,22%** (distorcida pela escala da variável `proline`, cujos valores chegam a 1680).
@@ -112,4 +112,4 @@ $$\text{Nota Final AV2} = \text{Trabalho 1 (4,0 escr. + 1,0 oral)} + \text{Traba
    * **Resposta:** Devido ao custo assimétrico do erro. Um falso negativo (deixar de identificar um aluno que vai evadir) faz a universidade perder a chance de agir preventivamente. Como a acurácia é inflada pelo desbalanceamento, a cobertura foca em capturar o máximo de evadidos reais.
 
 3. **Pergunta Provável 3:** *"O Naive Bayes assume independência condicional. Isso é verdadeiro no dataset do grupo?"*  
-   * **Resposta:** Não, pois observamos correlação de até 0,546 entre `alcohol` e `proline`. No entanto, o algoritmo classifica com 88,89% de acurácia no teste porque necessita apenas que a probabilidade da classe correta supere as demais para acertar o rótulo, mesmo com probabilidades absolutas distorcidas.
+   * **Resposta:** Não, pois observamos correlação de até 0,644 entre `alcohol` e `proline`. No entanto, o algoritmo classifica com 88,89% de acurácia no teste porque necessita apenas que a probabilidade da classe correta supere as demais para acertar o rótulo, mesmo com probabilidades absolutas distorcidas.

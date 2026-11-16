@@ -78,7 +78,7 @@ A partir da matriz de contingência bivariada entre `alcohol_faixa` e `cultivar`
 * **Acurácia no Teste:** $88,89\%$ (40 acertos em 45).
 * **Matriz de Confusão no Teste:**
   $$\begin{bmatrix} 13 & 0 & 2 \\ 0 & 17 & 1 \\ 0 & 2 & 10 \end{bmatrix}$$
-* **Discussão Teórica sobre a Suposição de Independência:** O par mais correlacionado no subespaço foi `alcohol` e `proline` ($r = 0,546$). Apesar de violar a premissa de independência condicional estatística exigida pelo Naive Bayes, o modelo mantém robustez preditiva porque a classificação depende da fronteira geométrica onde a probabilidade relativa de uma classe supera as demais, mantendo-se estável mesmo diante de distorções moderadas nas estimativas de densidade absoluta.
+* **Discussão Teórica sobre a Suposição de Independência:** O par mais correlacionado no subespaço foi `alcohol` e `proline` ($r = 0,644$). Apesar de violar a premissa de independência condicional estatística exigida pelo Naive Bayes, o modelo mantém robustez preditiva porque a classificação depende da fronteira geométrica onde a probabilidade relativa de uma classe supera as demais, mantendo-se estável mesmo diante de distorções moderadas nas estimativas de densidade absoluta.
 
 #### Etapa 5: Aprendizado Não Supervisionado, Espaço de Características e PCA
 * **K-Means sem Normalização:** Pureza de **70,22%**. A variável `proline` (com valores absolutos na faixa de $10^3$) distorce a métrica euclidiana no espaço $\mathbb{R}^5$.
