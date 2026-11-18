@@ -1,17 +1,4 @@
-"""
-Módulo de definição da entidade Produto.
-Representa um item do catálogo da loja de informática.
-"""
-
 class Produto:
-    """
-    Representa um produto comercializado pela loja de informática.
-    
-    Atributos:
-        codigo (int): Identificador único do produto (chave da ABB).
-        nome (str): Descrição/nome do produto.
-        preco (float): Preço unitário em Reais (R$).
-    """
     def __init__(self, codigo: int, nome: str, preco: float):
         if not isinstance(codigo, int):
             raise TypeError("O código do produto deve ser um número inteiro.")

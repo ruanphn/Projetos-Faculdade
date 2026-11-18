@@ -1,21 +1,7 @@
-"""
-Programa Principal - Desafio 2: Comparação de Algoritmos de Ordenação
-Executa a geração de alunos, medições com 3 rodadas, mediana de tempo e exibição da tabela comparativa.
-"""
-import json
-import os
 import sys
 from experimento import executar_experimento
 
-def formatar_tabela_markdown(resultados) -> str:
-    linhas = []
-    linhas.append("| Registros | Algoritmo | Tempo mediano (ms) | Comparações |")
-    linhas.append("|---|---|---|---|")
-    for r in resultados:
-        linhas.append(f"| {r['tamanho']:,} | {r['algoritmo']} | {r['tempo_mediano_ms']:.3f} ms | {r['comparacoes']:,} |")
-    return "\n".join(linhas)
-
-def exibir_tabela_terminal(resultados):
+def exibir_tabela(resultados):
     print("\n" + "="*70)
     print("      TABELA COMPARATIVA DE RESULTADOS - DESAFIO 2")
     print("="*70)
@@ -34,14 +20,7 @@ def main():
         seed = int(sys.argv[1])
         
     resultados = executar_experimento(seed=seed)
-    exibir_tabela_terminal(resultados)
-
-    # Salva os resultados em arquivo JSON para ser consumido pelos gráficos e relatório
-    diretorio_atual = os.path.dirname(os.path.abspath(__file__))
-    caminho_json = os.path.join(diretorio_atual, "resultados_experimento.json")
-    with open(caminho_json, "w", encoding="utf-8") as f:
-        json.dump(resultados, f, indent=4, ensure_ascii=False)
-    print(f"[Info] Resultados salvos com sucesso em: {caminho_json}")
+    exibir_tabela(resultados)
 
 if __name__ == "__main__":
     main()
